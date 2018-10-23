@@ -1,0 +1,54 @@
+html{
+    
+    background: url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Free-HD-Cyan-Backgrounds.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header, h2{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    color: gainsboro;
+}
+
+body {
+}
+
+table {
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+    float: top;
+}
+
+th, td, tr {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-width: thick;
+    margin: auto;
+    padding: 2px;
+    font-family: 'Pacifico';
+    font-size: 20px;
+    background-color: aquamarine;
+}
+
+th a {
+    text-decoration: none;
+    color: #DA7B93;
+}
+
+th a:active {
+    color: cyan;
+}
+
+th a:visited {
+    color: black;
+}
+
+.h1 {
+    color: #DA7B93;
+    font-family: 'Pacifico';
+}
