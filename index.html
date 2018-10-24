@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="screen.css">
     <title>Paul Graham Home</title>
@@ -11,24 +13,25 @@
     <header>
         <h1>Paul Graham</h1>
     </header>
-    <table>
-        <tr>
-            <th><a href="http://paulgraham.com/books.html">Readings</a></th>
-            
-            <th><a href="http://paulgraham.com/bio.html">Bio</a></th>
-            
-            <th><a href="http://paulgraham.com/faq.html">FAQ's</a></th>
-            
-            <th><a href="http://paulgraham.com/info.html">Contact</a></th>
-        </tr>
-    </table>
-    <h2 class="h1">New to the Website?</h2>
-    <h2 class="h1">Want to Start a Startup?</h2>
-    
+    <div class="navbar">
+      <a href="http://paulgraham.com/bio.html">Biography Link</a>
+      <a href="http://paulgraham.com/faq.html">FAQ Links</a>
+      <a href="http://paulgraham.com/info.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Readings
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="http://paulgraham.com/books.html">Readings</a>
+        </div>
+      </div>
+    </div>
+    <h3 id="h1">New to the Website?</h3>
+    <h3 id="h1">Want to Start a Startup?</h3>
+  <script src="dropdown.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
-
-<main>
-
-</main>
-
 </html>
