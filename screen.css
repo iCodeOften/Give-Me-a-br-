@@ -4,7 +4,17 @@ header, h3{
     font-size: 25px;
     color: gainsboro;
 }
+body {
+  background-image: url("code-wallpaper-16.jpg");
+}
+nav{
+  max-width: 100%;
+  text-align: center;
+}
 
+h1{
+  font-size: 30px;
+}
 .navbar {
     overflow: hidden;
     background-color: #333;
@@ -16,12 +26,13 @@ header, h3{
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px 5px 10%;
     text-decoration: none;
 }
 
 .dropdown {
-    float: left;
+    display: inline-block;
+    float: inherit;
     overflow: hidden;
 }
 
@@ -34,7 +45,7 @@ header, h3{
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
-    margin: 0;
+    margin: auto;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
@@ -43,20 +54,22 @@ header, h3{
 
 .dropdown-content {
     display: none;
+    float: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 197px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    float: none;
+    float: inherit;
     color: black;
-    padding: 12px 16px;
+    padding: 12px 25px;
     text-decoration: none;
     display: block;
     text-align: left;
+    font-size: 15px;
 }
 
 .dropdown-content a:hover {
