@@ -9,7 +9,7 @@ body{
   background-image: url(code-wallpaper-16.jpg);
   -webkit-background-size: cover;
   background-size:cover;
-  background-position: center center;
+  background-position: center;
   height: 100vh;
 }
 .menu-area li a{
@@ -101,23 +101,47 @@ nav:after{
   color: white;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 40%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
   width: 80%;
   padding: 20px;
   text-align: center;
+  font-family: 'Abril Fatface', cursive;
 }
 
 .parallax{
   /*image*/
   background-image: url("https://picjumbo.com/wp-content/uploads/free-business-stock-photos-1080x1620.jpg");
 
-  height: 300px;
   /*sizing*/
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 800px;
+}
+.parallax-2{
+  /*image*/
+  background-image: url("https://www.53.com/content/dam/fifth-third/article-images/795x532-article-images_0102_professional-team-meeting.jpg");
+  /*sizing*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 800px;
+}
+
+
+.section-break {
+    /*this class is used to break up the background images*/
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: #C0C0C0C0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+
 }
