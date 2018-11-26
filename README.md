@@ -8,10 +8,13 @@ Garet (Vape):
 3. "Books"
 
 Jeff (Montoon):
-1. "Articles"
+4. "Articles"
+
+Gavin (Vapes):
+5. "Quotes"
+6. "Bio"
 
 Available Pages to do:
-1. "Articles" http://paulgraham.com/articles.html
 2. "Helpful Links"
   -This will be comprised of the standalone link's on paulgraham.com's nav bar
   -ie; "YC", "H&P", "Twitter", etc.
@@ -21,7 +24,5 @@ Available Pages to do:
   -I might just make this a sub-header on the <nav> bar because there's different pages but feel free
    to pick one of the pages and re-make it!
 5."Spam"
-6."Quotes"
-7."Bio"
 8."Index"
   -I honestly have no clue why it's called that or what it is
