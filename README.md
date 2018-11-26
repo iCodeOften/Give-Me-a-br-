@@ -35,13 +35,6 @@ Available Pages to do:
   -ie; "YC", "H&P", "Twitter", etc.
   
   -Needs to include pictures and clickable hypertext links
-  
-
--"FAQ's"
-
-  -I might just make this a sub-header on the <nav> bar because there's different pages but feel free
-  
-   to pick one of the pages and re-make it!
    
 -"Spam"
 
