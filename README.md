@@ -20,9 +20,15 @@ Gavin (Vapes):
 
 6. "Bio"
 
+Dan (Astrofax):
+
+7. "FAQ's"
+
+8. "Index"
+
 Available Pages to do:
 
-2. "Helpful Links"
+-"Helpful Links"
 
   -This will be comprised of the standalone link's on paulgraham.com's nav bar
   
@@ -30,16 +36,12 @@ Available Pages to do:
   
   -Needs to include pictures and clickable hypertext links
   
-3. "Essays"
 
-4. "FAQ's"
+-"FAQ's"
 
   -I might just make this a sub-header on the <nav> bar because there's different pages but feel free
   
    to pick one of the pages and re-make it!
    
-5."Spam"
+-"Spam"
 
-8."Index"
-
-  -I honestly have no clue why it's called that or what it is
