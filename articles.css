@@ -5,81 +5,18 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body{
+
+body, html{
   background-image: url(code-wallpaper-16.jpg);
   -webkit-background-size: cover;
   background-size:cover;
-  background-position: center;
-  height: 100vh;
-}
-.menu-area li a{
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: block;
-  padding: 0 25px;
-  font-size: 14px
-  line-height: 30px;
-  position: relative;
-  z-index: 1;
-}
-.menu-area li{
-  list-style: none;
-  display: inline-block;
-}
-.custom-padding{
-  padding-top: 20px;
-}
-nav{
-  position: relative;
-  padding: 20px 10px 10px 20px;
-  text-align: right;
-  font-size: 20px;
-  z-index: 1;
-  background: #333;
-  margin: 0 auto;
-  width: calc(100% - 60px) ;
-}
-.logo{
-  width: 15%;
-  float: left;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 30px;
-  text-align: left;
-  padding-left: 2%;
-}
-.menu-area li a:hover{
-  background: tomato;
-  color: #fff;
-}
-nav:before{
-  position:absolute;
-  content: ' ';
-  left: 0;
-  top: 100%;
-  border-top: 10px solid #333;
-  border-right: 10px solid #333;
-  border-left: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-nav:after{
-  position: absolute;
-  content: ' ';
-  right: 0;
-  top: 100%;
-  border-top: 10px solid #333;
-  border-right: 10px solid #333;
-  border-left: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  background-position: center center;
+  height: 100%;
 }
 
 .slideshowbg {
   position: relative;
   padding: 250px;
-  height: 300px;
   /* Background image used for slideshow */
   background-image: url("https://squarmilner.com/wp-content/uploads/2018/04/MA-2.jpg");
 
@@ -88,11 +25,11 @@ nav:after{
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  max-width: auto;
+  height: 100%;
 
   /*image filter effect */
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .slideshow-text{
@@ -101,47 +38,62 @@ nav:after{
   color: white;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
   width: 80%;
   padding: 20px;
   text-align: center;
-  font-family: 'Abril Fatface', cursive;
 }
 
-.parallax{
-  /*image*/
-  background-image: url("https://picjumbo.com/wp-content/uploads/free-business-stock-photos-1080x1620.jpg");
+/*transition styling for main.html*/
+.transition {
+    }
 
-  /*sizing*/
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 800px;
-}
-.parallax-2{
-  /*image*/
-  background-image: url("https://www.53.com/content/dam/fifth-third/article-images/795x532-article-images_0102_professional-team-meeting.jpg");
-  /*sizing*/
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 800px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
+a:hover{
+    color: gray;
+}
 
-.section-break {
-    /*this class is used to break up the background images*/
-    font-size: 15px;
-    font-family: 'Open Sans', sans-serif;
+.button{
+    border-radius: 4px;
+    background-color: inherit;
+    border: none;
+    color: #ffffff;
+    font-size: 25px;
     text-align: center;
-    color: #C0C0C0C0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: inherit;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
 
+.button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
 
+.button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: inherit;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after{
+    opacity: 1;
+    right: 0;
 }
