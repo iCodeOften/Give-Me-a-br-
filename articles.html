@@ -6,6 +6,109 @@
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
   <link rel="stylesheet" href="articles.css">
   <title>Articles</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body, html{
+      background-image: url(code-wallpaper-16.jpg);
+      -webkit-background-size: cover;
+      background-size:cover;
+      background-position: center center;
+      height: 100%;
+    }
+
+    .menu-area li a{
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 25px;
+    font-size: 14px
+    line-height: 30px;
+    position: relative;
+    z-index: 1;
+    }
+
+    .menu-area li{
+    list-style: none;
+    display: inline-block;
+    }
+
+    .custom-padding{
+    padding-top: 20px;
+    }
+
+    nav{
+    position: relative;
+    padding: 20px 10px 10px 20px;
+    text-align: right;
+    font-size: 20px;
+    z-index: 1;
+    background: #333;
+    margin: 0 auto;
+    width: calc(100% - 60px) ;
+    }
+    .logo{
+    width: 15%;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 2%;
+    }
+    .menu-area li a:hover{
+    background: tomato;
+    color: #fff;
+    }
+    nav:before{
+    position:absolute;
+    content: ' ';
+    left: 0;
+    top: 100%;
+    border-top: 10px solid #333;
+    border-right: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    }
+
+    nav:after{
+    position: absolute;
+    content: ' ';
+    right: 0;
+    top: 100%;
+    border-top: 10px solid #333;
+    border-right: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    }
+
+    li, a, ul, h1 {
+      text-decoration: none;
+      list-style-type: none;
+    }
+
+    h1{
+      font-size: 60px;
+    }
+
+    .lists {
+      text-align: center;
+      padding: 10px 5px 10px 0;
+      color: white;
+    }
+
+    a:hover{
+      color: black;
+    }
+  </style>
 
 </head>
 
@@ -22,33 +125,33 @@
       </ul>
     </nav>
   </div>
-  <div class="essays-padding">
-  <h1>Essays</h1>
-  <ol>
 
-  <li><a href="http://paulgraham.com/sun.html" >General and Surprising</a> </li>
-  <li><a href="http://paulgraham.com/pow.html"> Charisma / Power</a> </li>
-  <li><a href="http://paulgraham.com/disc.html">The Risk of Discovery</a> </li>
-  <li><a href="http://paulgraham.com/prop62.html">This Year We Can End the Death Penalty in California </a> </li>
-  <li> <a href="http://paulgraham.com/pgh.html"> How to Make Pittsburgh a Startup Hub </a> </li>
-  <li> <a href="http://paulgraham.com/vb.html"> Life is Short </a> </li>
-  <li> <a href="http://paulgraham.com/ineq.html"> Economic Inequality </a> </li>
-  <li> <a href="http://paulgraham.com/re.html"> The Refragmentation </a> </li>
-  <li> <a href="http://paulgraham.com/jessica.html"> Jessica Livingston </a> </li>
-  <li> <a href="http://paulgraham.com/bias.html"> A Way to Detect Bias </a> </li>
-  <li> <a href="http://paulgraham.com/talk.html"> Write Like You Talk </a> </li>
-  <li> <a href="http://paulgraham.com/aord.html"> Default Alive or Default Dead? </a> </li>
-  <li> <a href="http://paulgraham.com/safe.html"> Why It's Safe for Founders to Be Nice </a> </li>
-  <li> <a href="http://paulgraham.com/name.html"> Change Your Name </a> </li>
-  <li> <a href="http://paulgraham.com/altair.html"> What Microsoft Is this the Altair Basic of? </a> </li>
-  <li> <a href="http://paulgraham.com/ronco.html"> The Ronco Principle </a> </li>
-  <li> <a href="http://paulgraham.com/work.html"> What Doesn't Seem Like Work? </a> </li>
-  <li> <a href="http://paulgraham.com/corpdev.html"> Don't Talk to Corp Dev </a> </li>
-  <li> <a href="http://paulgraham.com/95.html"> Let the Other 95% of Great Programmers In </a> </li>
-  <li> <a href="http://paulgraham.com/ecw.html"> How to Be an Expert in a Changing World </a> </li>
-  <li> <a href="http://paulgraham.com/know.html"> How You Know </a> </li>
-
-  </ol>
+  <div class="lists">
+    <h1>Essays</h1> <br>
+    <div>
+      <ul>
+        <li> <a href="Essays/sun.html" >General and Surprising</a></li>
+        <li> <a href="Essays/pow.html"> Charisma / Power</a> </li>
+        <li> <a href="Essays/disc.html">The Risk of Discovery</a> </li>
+        <li> <a href="Essays/prop62.html">This Year We Can End the Death Penalty in California</a> </li>
+        <li> <a href="Essays/pgh.html"> How to Make Pittsburgh a Startup Hub </a> </li>
+        <li> <a href="Essays/vb.html"> Life is Short</a> </li>
+        <li> <a href="Essays/ineq.html"> Economic Inequality </a> </li>
+        <li> <a href="Essays/re.html"> The Refragmentation </a> </li>
+        <li> <a href="Essays/jessica.html"> Jessica Livingston </a> </li>
+        <li> <a href="Essays/bias.html"> A Way to Detect Bias </a> </li>
+        <li> <a href="Essays/talk.html"> Write Like You Talk </a> </li>
+        <li> <a href="Essays/aord.html"> Default Alive or Default Dead? </a> </li>
+        <li> <a href="Essays/safe.html"> Why It's Safe for Founders to Be Nice </a> </li>
+        <li> <a href="Essays/name.html"> Change Your Name </a> </li>
+        <li> <a href="Essays/altair.html"> What Microsoft Is this the Altair Basic of? </a> </li>
+        <li> <a href="Essays/ronco.html"> The Ronco Principle </a> </li>
+        <li> <a href="Essays/work.html"> What Doesn't Seem Like Work? </a> </li>
+        <li> <a href="Essays/corpdev.html"> Don't Talk to Corp Dev </a> </li>
+        <li> <a href="Essays/95.html"> Let the Other 95% of Great Programmers In </a> </li>
+        <li> <a href="Essays/ecw.html"> How to Be an Expert in a Changing World </a> </li>
+      </ul>
+    </div>
 
   </div>
 
