@@ -94,7 +94,7 @@ nav:after{
   filter: blur(5px);
   -webkit-filter: blur(5px);
 }
-
+/*this is used for any kind of transpearant text box*/
 .slideshow-text{
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.4);
