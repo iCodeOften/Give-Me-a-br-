@@ -63,6 +63,9 @@
     font-size: 30px;
     text-align: left;
     padding-left: 2%;
+    position: relative;
+    top: -18px;
+    left: 20px;
     }
     .menu-area li a:hover{
     background: tomato;
@@ -125,6 +128,10 @@
       display: inline-block;
     }
 
+    .right{
+      float: right;
+    }
+
   </style>
 
 </head>
@@ -132,7 +139,7 @@
 <body>
   <div class="custom-padding">
     <nav>
-      <div class="logo">Logo</div>
+      <div class="logo"><img src="logo.png" width ="50px"></div>
       <ul class="menu-area">
         <li><a href="#">Home</a></li>
          <li><a href="#">Biography</a></li>
@@ -144,6 +151,7 @@
   </div>
 
   <div class="lists">
+    <br>
     <h1>Essays</h1> <br>
     <div>
       <ul>
@@ -176,9 +184,10 @@
 </body>
 
 <footer>
-  <div id="banner">
+  <div>
     <ul>
       <li>Links: </li>
+      <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgram@edu.edu</i> </li>
       <div class="inline-block">
         <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
       </div>
@@ -188,3 +197,5 @@
       <div class="inline-block">
         <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
       </div>
+   </ul>
+  </div>
