@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html{
+  background-image: url(code-wallpaper-16.jpg);
+  -webkit-background-size: cover;
+  background-size:cover;
+  background-position: center center;
+  height: 100%;
+}
+
+
+
+.slideshowbg {
+  position: relative;
+  padding: 250px;
+  /* Background image used for slideshow */
+  background-image: url("https://squarmilner.com/wp-content/uploads/2018/04/MA-2.jpg");
+
+  /* Image scaling */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  height: 100%;
+
+  /*image filter effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.slideshow-text{
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+/*transition styling for main.html*/
+.transition {
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: gray;
+}
+
+.button{
+    border-radius: 4px;
+    background-color: inherit;
+    border: none;
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    padding: inherit;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: inherit;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after{
+    opacity: 1;
+    right: 0;
+}
