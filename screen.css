@@ -41,15 +41,20 @@ nav{
   margin: 0 auto;
   width: calc(100% - 60px) ;
 }
+
 .logo{
-  width: 15%;
-  float: left;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 30px;
-  text-align: left;
-  padding-left: 2%;
+    width: 15%;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 2%;
+    position: relative;
+    top: -18px;
+    left: 20px;
 }
+
 .menu-area li a:hover{
   background: tomato;
   color: #fff;
@@ -94,7 +99,7 @@ nav:after{
   filter: blur(5px);
   -webkit-filter: blur(5px);
 }
-/*this is used for any kind of transpearant text box*/
+
 .slideshow-text{
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.4);
@@ -142,8 +147,45 @@ nav:after{
     color: #C0C0C0C0;
     padding-top: 40px;
     padding-bottom: 40px;
+}
 
+footer {
+  padding: 10px;
+  background-color: #2d2d2d;
+  color: #b5b5b5;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 15px;
+  font-family: sans-serif;
+    text-decoration: none;
+}
 
+.inline-block img:hover{
+    background: red;
+    color: red;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.right {
+    float: right;
+    text-decoration: none;
+}
+
+li, ul, h1 {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  color: white;
+}
+
+h1{
+  font-size: 60px;
 }
 
 .lists {
@@ -152,26 +194,6 @@ nav:after{
   color: white;
 }
 
-footer {
-  padding: 10px;
-  background-color: #2d2d2d;
-  color: #b5b5b5;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-size: 15px;
-  font-family: sans-serif;
-}
-
-a:hover{
-  color: black;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.right{
-  float: right;
+.fixed-footer {
+    position: fixed;
 }
