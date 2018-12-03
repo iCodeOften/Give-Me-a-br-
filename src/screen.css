@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  background-image: url(code-wallpaper-16.jpg);
+  background-image: url(/code-wallpaper-16.jpg);
   -webkit-background-size: cover;
   background-size:cover;
   background-position: center;
