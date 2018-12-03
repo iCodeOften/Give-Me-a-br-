@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
+  	<link rel="stylesheet" href="../faqs1.css">
+  	<title>FAQs</title>
+</head>
+
+	<body>
+	    <div class="custom-padding">
+    <nav>
+      <div class="logo">Logo</div>
+      <ul class="menu-area">
+        <li><a href="#">Home</a></li>
+         <li><a href="#">Biography</a></li>
+         <li><a href="#">FAQ</a></li>
+         <li><a href="#">Link</a></li>
+         <li><a href="#">Readings</a></li>
+  </ul>
+  </nav>
+  </div>
+
+<div class="body_text">
+	<h1>Lisp FAQs</h1><br>
+	<b>What is Lisp?</b><br><br>Lisp is a family of programming languages descended from
+a language <a href="rootsoflisp.html">John McCarthy</a> invented
+(or more accurately, discovered) in the late 1950s.  The
+two main dialects now are Common Lisp and Scheme.
+We're working on a new dialect called <a href="arc.html">Arc</a>.<br><br><b>How can I learn Lisp?</b><br><br>The way to learn any language is to write programs in it.
+You have two main dialects to choose between: Scheme
+and Common Lisp.  They each have advantages and disadvantages,
+but the differences between them are tiny compared to the
+differences between them and other languages, so if you want
+to start learning Lisp, it doesn't matter which you choose.<br><br>There are good books about both dialects, and many good free
+implementations.  So get a book and an implementation, and start trying to write
+programs.  Read existing source code to get an idea of Lisp
+style.  If you run into trouble, ask on comp.lang.lisp.  
+People there are always willing to help newbies.<br><br><b>Which should I learn, Common Lisp or Scheme?  What's the
+difference?</b><br><br>Common Lisp is powerful but ugly.
+Scheme is small and clean, but the standard only defines the
+inner core of the language.  If I had to deliver an application
+I'd probably use Common Lisp; if I were teaching a course I might use
+Scheme (but with Common Lisp macros).<br><br><b>Do you know a good, free Lisp implementation?</b><br><br>There are <a href="lisps.html">several</a>.  The Common Lisp implementation 
+I use
+is <a href="http://clisp.sourceforge.net">Clisp</a>, but
+<a href="http://www.cons.org/cmucl/">CMUCL</a> is also well-regarded.
+For Scheme hacking I use <a href="http://www.s48.org">Scheme
+48</a> and <a href="http://www.plt-scheme.org">PLT Scheme</a>.<br><br><b>Can you recommend a book for someone who wants to learn Lisp?</b><br><br>You might like
+<a href="http://www.amazon.com/exec/obidos/ASIN/0133708756">this one</a>.<br><br><b>Is there a good online tutorial for Lisp?</b><br><br>Start with
+<a href="http://lib.store.yahoo.net/lib/paulgraham/acl2.txt">Chapter 2</a>
+of Ansi Common Lisp, which is a brief introduction to Lisp programming.
+For more detail, see the Common Lisp
+<a href="http://www-2.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/html/cl
+tl/cltl2.html">reference
+manual</a>.<br><br><b>If Lisp is so great, why don't more people use it?</b><br><br>The root cause is probably that it looks <a href="iflisp.html">hard</a>, but
+it would help if there were a dialect with extensive libraries.<br><br><b>Where can I get a copy of <i>On Lisp</i>?</b><br><br>Thanks to Chip Coldwell, you can now get a Postscript
+file of it <a href="onlisptext.html">online</a>.<br><br>It looks as if the book is going to be in print again
+soon, but if you are determined to have a valuable 
+first edition, you can get a used copy at 
+<a href="http://www.amazon.com/exec/obidos/tg/stores/offering/list/-/0130305529">Amazon</a>.<br><br><b>Is there a second edition of <i>ANSI Common Lisp</i>?</b><br><br>Some databases say that there is, but there isn't; not yet
+at least.<br><br><b>Is there a set of solutions to the problems in
+<i>ANSI Common Lisp</i>?</b><br><br>Unfortunately not.  I was supposed to write one, but
+we started <a href="avg.html">Viaweb</a> right after the
+book went to press, and I never got around to it.<br><br><b>Where can I get a job hacking Lisp?</b><br><br>Try the companies with Lisp <a href="apps.html">applications</a>.
+Or you could start your <a href="avg.html">own</a>.<br><br><b>I like Lisp but my company won't let me use it.  What should I do?</b><br><br>Try to get them to let you use Python.  Often when your employer won't let 
+you use Lisp it's because (whatever the official reason) the guy in charge
+of your department is afraid of the way Lisp source code looks.
+Python looks like an ordinary dumb language, but semantically it has a
+lot in common with Lisp, and has been
+<a href="icad.html">getting closer</a> to Lisp over time.<br><br>They might even let you use Ruby, which is even more Lisp-like.<br><br><b>What do you think of ML and its derivatives?</b><br><br>Most hackers I know have been disappointed by the ML family.
+Languages with static typing would be more suitable if programs were
+something you thought
+of in advance, and then merely translated into code.  But that's not
+how programs get written.<br><br>The inability to have lists of mixed types is a particularly crippling
+restriction.  It gets in the way of exploratory programming (it's
+convenient early on to represent everything as lists), and it
+means you can't have real macros.<br><br><b>Do you know anyone who does AutoLisp consulting?</b><br><br>No, but <a href="http://www.google.com/search?q=autolisp+consulting">Google</a>
+does.
+</div>
+<div float="center">
+<a href="../faqs.html"><<u>Back</u></a>
+</body>
+	    <footer class="fixed-footer">
+        <div>
+            <ul>
+              <li>Links: </li>
+              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
+              <div class="inline-block">
+                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+              </div>
+              <div class="inline-block">
+                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+              </div>
+              <div class="inline-block">
+                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+              </div>
+            </ul>
+        </div>
+    </footer>
