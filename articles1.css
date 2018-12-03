@@ -12,7 +12,9 @@ body, html{
   background-size:cover;
   background-position: center center;
   height: 100%;
+  color: white;
 }
+
 
 .menu-area li a{
 text-decoration: none;
@@ -21,7 +23,7 @@ letter-spacing: 1px;
 text-transform: uppercase;
 display: block;
 padding: 0 25px;
-font-size: 14px
+font-size: 14px;
 line-height: 30px;
 position: relative;
 z-index: 1;
@@ -98,6 +100,9 @@ a {
 
 h1{
   font-size: 60px;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .lists {
@@ -128,4 +133,7 @@ a:hover{
 
 .right{
   float: right;
+}
+.fixed-footer {
+    position: fixed;
 }
