@@ -10,10 +10,28 @@ body{
   -webkit-background-size: cover;
   background-size:cover;
   background-position: center;
+  text-align: center;
+  color: white;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    min-height: 100%;
+}
+
+.body{
+  background-image: url(../images/code-wallpaper-16.jpg);
+  -webkit-background-size: cover;
+  background-size:cover;
+  background-position: center;
   height: 100vh;
   text-align: center;
   color: white;
 }
+
+html{
+    min-height: 100%;
+}
+
 .menu-area li a{
   text-decoration: none;
   color: #fff;
@@ -157,14 +175,14 @@ nav:after{
 }
 
 footer {
-  padding: 10px;
-  background-color: #2d2d2d;
-  color: #b5b5b5;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-size: 15px;
-  font-family: sans-serif;
+    padding: 10px;
+    background-color: #2d2d2d;
+    color: #b5b5b5;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    font-size: 15px;
+    font-family: sans-serif;
     text-decoration: none;
 }
 
@@ -202,5 +220,15 @@ h1{
 }
 
 .fixed-footer {
-    position: fixed;
+    position: absolute;
 }
+
+.body_text{
+    padding-bottom: 10px;
+    margin-bottom: 2%;
+}
+
+.fixed-footer-home{
+    
+}
+
