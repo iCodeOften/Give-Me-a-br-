@@ -4,24 +4,25 @@
   <meta name="viewport" content="width=device-width, fit-to-shrink=no">
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
-  <link rel="stylesheet" href="../faqs1.css">
+  <link rel="stylesheet" href="../src/screen.css">
   <title>Index</title>
 </head>
 
 <body>
   <div class="custom-padding">
-    <nav>
-      <div class="logo">Logo</div>
-      <ul class="menu-area">
-        <li><a href="#">Home</a></li>
-         <li><a href="#">Biography</a></li>
-         <li><a href="#">FAQ</a></li>
-         <li><a href="#">Link</a></li>
-         <li><a href="#">Readings</a></li>
-      </ul>
-    </nav>
-  </div>
-
+		<nav>
+			<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+			<ul class="menu-area">
+				 <li><a href="../index.html">Home</a></li>
+				 <li><a href="../src/bio.html">Biography</a></li>
+				 <li><a href="../src/faqs.html">FAQ</a></li>
+				 <li><a href="../src/quotes.html">Quotes</a></li>
+				 <li><a href="../src/articles.html">Essays</a></li>
+				 <li><a href="../src/references.html">Refferences</a></li>
+			</ul>
+		</nav>
+	</div>
+<br>
   <div class="body_text">
     <h1>A Plan for Spam</h1> <br>
     <b>Like to build things?</b> Try <a href="http://news.ycombinator.com">Hacker
@@ -35,13 +36,13 @@ August 2002<br><br><i>(This article describes the spam-filtering techniques
 used in the spamproof web-based mail reader we
 built to exercise <a href="arc.html">Arc</a>. An
 improved algorithm is described in <a href="better.html">Better
-Bayesian Filtering</a>.)</i><br><br>I think it's possible to stop spam, and that 
+Bayesian Filtering</a>.)</i><br><br>I think it's possible to stop spam, and that
 content-based filters are the way to do it.
 The Achilles heel of the spammers is their message.
 They can circumvent any other barrier you set up.  They have so far, at
 least.  But they have to deliver their message, whatever it
 is.  If we can write software that recognizes their messages,
-there is no way they can get around that.<br><br><center>_ _ _</center><br><br>To the recipient, spam is easily recognizable.  If you hired 
+there is no way they can get around that.<br><br><center>_ _ _</center><br><br>To the recipient, spam is easily recognizable.  If you hired
 someone to read your mail and discard the spam, they would
 have little trouble doing it.  How much do we have
 to do, short of AI, to automate this process?<br><br>I think we will be able to solve the problem with fairly
@@ -53,7 +54,7 @@ filter, we now miss less than 5 per 1000 spams, with 0 false positives.<br><br>T
 try when they write spam filters.  Most hackers' first instinct is
 to try to write software that recognizes individual properties of
 spam.  You look at spams
-and you think, the gall of these guys to try sending me mail 
+and you think, the gall of these guys to try sending me mail
 that begins "Dear Friend" or has a subject line that's all
 uppercase and ends in eight exclamation points.  I can filter
 out that stuff with about one line of code.<br><br>And so you do,
@@ -84,9 +85,9 @@ When I did try statistical analysis, I
 found immediately that it was much cleverer than I had been.
 It discovered, of course, that terms like "virtumundo" and
 "teens" were good indicators of spam.  But it also
-discovered that "per" and "FL" and "ff0000" are good 
+discovered that "per" and "FL" and "ff0000" are good
 indicators of spam.  In fact, "ff0000" (html for bright red)
-turns out to be as good an indicator of spam as any  
+turns out to be as good an indicator of spam as any
 pornographic term.<br><br><center>_ _ _</center><br><br>Here's a sketch of how I do statistical filtering.  I start
 with one corpus of spam and one of nonspam mail.  At the
 moment each one has about 4000 messages in it.  I scan
@@ -99,7 +100,7 @@ probably room for improvement here.)  I ignore tokens that
 are all digits, and I also ignore html comments, not even
 considering them as token separators.<br><br>I count the number
 of times each token (ignoring case, currently) occurs in
-each corpus.  At this stage I end up with two large hash   
+each corpus.  At this stage I end up with two large hash
 tables, one for each corpus, mapping tokens to number
 of occurrences.<br><br>Next I create a third hash table, this time mapping
 each token to the probability that an email containing it is a spam,
@@ -110,7 +111,7 @@ which I calculate as follows [1]:
    (unless (< (+ g b) 5)
      (max .01
           (min .99 (float (/ (min 1 (/ b nbad))
-                             (+ (min 1 (/ g ngood))   
+                             (+ (min 1 (/ g ngood))
                                 (min 1 (/ b nbad)))))))))
 </xmp></font>
 where <font face=courier>word</font> is the token whose probability we're
@@ -121,30 +122,30 @@ I want to bias the probabilities slightly to avoid false
 positives, and by trial and error I've found that a good
 way to do it is to double all the numbers in <font face=courier>good</font>.
 This helps to distinguish between words that occasionally
-do occur in legitimate email and words that almost never do. 
+do occur in legitimate email and words that almost never do.
 I only consider words that occur more than five times in
-total (actually, because of the doubling, occurring three 
+total (actually, because of the doubling, occurring three
 times in nonspam mail would be enough).  And then there is
 the question of what probability to assign to words that
-occur in one corpus but not the other.  Again by trial and   
+occur in one corpus but not the other.  Again by trial and
 error I chose .01 and .99.  There may be room for tuning
 here, but as the corpus grows such tuning will happen
 automatically anyway.<br><br>The especially observant will notice that while I consider
 each corpus to be a single long stream of text for purposes
 of counting occurrences, I use the number of emails in
-each, rather than their combined length, as the divisor     
+each, rather than their combined length, as the divisor
 in calculating spam probabilities.  This adds another
 slight bias to protect against false positives.<br><br>When new mail arrives, it is scanned into tokens, and
-the most interesting fifteen tokens, where interesting is  
+the most interesting fifteen tokens, where interesting is
 measured by how far their spam probability is from a
 neutral .5, are used to calculate the probability that
 the mail is spam.  If <font face=courier>probs</font>
 is a list of the fifteen individual probabilities, you
-calculate the 
+calculate the
 <a href="naivebayes.html">combined</a> probability thus:
 <font face=courier size=2><xmp>
 (let ((prod (apply #'* probs)))
-  (/ prod (+ prod (apply #'* (mapcar #'(lambda (x) 
+  (/ prod (+ prod (apply #'* (mapcar #'(lambda (x)
                                          (- 1 x))
                                      probs)))))
 </xmp></font>
@@ -209,15 +210,15 @@ numbers are not misleading, because that is the approach I'm
 advocating: filter each user's mail based on the spam and
 nonspam mail he receives.  Essentially, each user should
 have two delete buttons, ordinary delete and delete-as-spam.
-Anything deleted as spam goes into the spam corpus,   
+Anything deleted as spam goes into the spam corpus,
 and everything else goes into the nonspam corpus.<br><br>You could start
 users with a seed filter, but ultimately each user should have
 his own per-word probabilities based on the actual mail he
 receives.  This (a) makes the filters more effective, (b) lets
 each user decide their own precise definition of spam,
 and (c) perhaps best of all makes it hard for spammers
-to tune mails to get through the filters.  If a lot of the  
-brain of the filter is in the individual databases, then 
+to tune mails to get through the filters.  If a lot of the
+brain of the filter is in the individual databases, then
 merely tuning spams to get through the seed filters
 won't guarantee anything about how well they'll get through
 individual users' varying and much more trained filters.<br><br>Content-based spam filtering is often combined with a whitelist,
@@ -226,36 +227,36 @@ One easy way to build such a
 whitelist is to keep a list of every address the user has
 ever sent mail to.  If a mail reader has a delete-as-spam
 button then you could also add the from address
-of every email the user has deleted as ordinary trash.<br><br>I'm an advocate of whitelists, but more as a way to save  
+of every email the user has deleted as ordinary trash.<br><br>I'm an advocate of whitelists, but more as a way to save
 computation than as a way to improve filtering.  I used to think that
 whitelists would make filtering easier, because you'd
 only have to filter email from people you'd never heard
 from, and someone sending you mail for the first time is
 constrained by convention in what they can say to you.
 Someone you already know might send you an email talking about sex,
-but someone sending you mail for the first time would not   
-be likely to.  The problem is, people can have more than one 
+but someone sending you mail for the first time would not
+be likely to.  The problem is, people can have more than one
 email address, so a new from-address doesn't guarantee that
 the sender is writing to you for the first time.
 It is not unusual
 for an old friend (especially if he is a hacker) to suddenly
 send you an email with a new from-address, so you can't
-risk false positives by filtering mail from unknown  
+risk false positives by filtering mail from unknown
 addresses especially stringently.<br><br>In a sense, though, my filters do themselves embody a kind
 of whitelist (and blacklist) because they are based on
 entire messages, including the headers.  So to that
 extent they "know" the email addresses of trusted senders
-and even the routes by which mail gets from them to me.   
-And they know the same about spam, including the server   
+and even the routes by which mail gets from them to me.
+And they know the same about spam, including the server
 names, mailer versions, and protocols.<br><br><center>_ _ _</center><br><br>If I thought that I could keep up current rates of spam
 filtering, I would consider this problem solved.  But it
 doesn't mean much to be able to filter out most present-day
 spam, because spam evolves.
-Indeed, most 
+Indeed, most
 <a href="falsepositives.html">antispam techniques</a> so far have been like pesticides that
 do nothing more than create a new, resistant strain of bugs.<br><br>I'm more hopeful about Bayesian filters, because they evolve
-with the spam.  So as spammers start using "c0ck"   
-instead of "cock" to evade simple-minded spam filters     
+with the spam.  So as spammers start using "c0ck"
+instead of "cock" to evade simple-minded spam filters
 based on individual words, Bayesian filters automatically
 notice.  Indeed, "c0ck" is far more damning evidence than
 "cock", and Bayesian filters know precisely how much more.<br><br>Still, anyone who proposes a plan for spam filtering has to
@@ -270,14 +271,14 @@ naughty words.  They'd have to make their mails indistinguishable
 from your ordinary mail.  And this I think would severely
 constrain them.  Spam is mostly sales
 pitches, so unless your regular mail is all sales pitches,
-spams will inevitably have a different character.  And    
-the spammers would also, of course, have to change (and keep 
+spams will inevitably have a different character.  And
+the spammers would also, of course, have to change (and keep
 changing) their whole infrastructure, because otherwise
 the headers would look as bad to the Bayesian filters as ever,
 no matter what they did to the message body.  I don't know
 enough about the infrastructure that spammers use to know
 how hard it would be to make the headers look innocent, but
-my guess is that it would be even harder than making the    
+my guess is that it would be even harder than making the
 message look innocent.<br><br>Assuming they could solve the problem of the headers,
 the spam of the future will probably look something like
 this:
@@ -298,33 +299,33 @@ pretty much put the spammers on the "legitimate" end of
 the spectrum out of business; they feel obliged
 by various state laws to include boilerplate about why
 their spam is not spam, and how to cancel your
-"subscription,"  and that kind of text is easy to   
+"subscription,"  and that kind of text is easy to
 recognize.<br><br>(I used to think it was naive to believe that stricter laws
-would decrease spam.  Now I think that while stricter laws  
+would decrease spam.  Now I think that while stricter laws
 may not decrease the amount of spam that spammers <i>send,</i>
-they can certainly help filters to decrease the amount of  
+they can certainly help filters to decrease the amount of
 spam that recipients actually see.)<br><br>All along the spectrum, if you restrict the sales pitches spammers
 can make, you will inevitably tend to put them out of
 business.  That word <i>business</i> is an important one to
 remember.  The spammers are businessmen.  They send spam because
 it works.  It works because although the response rate
 is abominably low (at best 15 per million, vs 3000 per
-million for a catalog mailing), the cost, to them, is  
-practically nothing.  The cost is enormous for the recipients,   
-about 5 man-weeks for each million recipients who spend  
+million for a catalog mailing), the cost, to them, is
+practically nothing.  The cost is enormous for the recipients,
+about 5 man-weeks for each million recipients who spend
 a second to delete the spam, but the spammer
 doesn't have to pay that.<br><br>Sending spam does cost the spammer something, though. [2]
 So the lower we can get the
 response rate-- whether by filtering, or by using filters to force
 spammers to dilute their pitches-- the fewer businesses will find it
-worth their while to send spam.<br><br>The reason the spammers use the kinds of 
+worth their while to send spam.<br><br>The reason the spammers use the kinds of
 <a href="http://www.milliondollaremails.com">sales
 pitches</a> that they do is to increase response rates.
 This is possibly even more disgusting
 than getting inside the mind of a spammer,
 but let's take a quick look inside the mind of someone
 who <i>responds</i> to a spam.  This person is either
-astonishingly credulous or deeply in denial about their   
+astonishingly credulous or deeply in denial about their
 sexual interests.  In either case, repulsive or
 idiotic as the spam seems to us, it is exciting
 to them.  The spammers wouldn't say these things if they
@@ -347,7 +348,7 @@ we undertake, the better, because any measure that
 constrains spammers will tend to make filtering easier.
 And even within the world of content-based filtering, I think
 it will be a good thing if there are many different kinds
-of software being used simultaneously.  The more different 
+of software being used simultaneously.  The more different
 filters there are, the harder it will be for
 spammers to tune spams to get through them.<br><br><br><br>
 <b>Appendix: Examples of Filtering</b><br><br><a href="http://lib.store.yahoo.net/lib/paulgraham/spam1.txt"
@@ -396,9 +397,9 @@ quality         0.8921298
 organization    0.12454646
 investment      0.8568143
 very            0.14758544
-valuable        0.82347786 
+valuable        0.82347786
 </xmp></font>
-This time the evidence is a mix of good and bad.  A word like  
+This time the evidence is a mix of good and bad.  A word like
 "shortest" is almost as much evidence for innocence as a
 word like "madam" or "promotion" is for guilt.  But still the
 case for guilt is stronger.  If you combine these numbers
@@ -422,7 +423,7 @@ are republics.[3]<br><br>On the other hand, "enter" is a genuine miss.  It occur
 mostly in unsubscribe instructions, but here is used in a
 completely innocent way.  Fortunately the statistical approach is
 fairly robust, and can tolerate quite a lot of misses
-before the results start to be thrown off.<br><br>For comparison, 
+before the results start to be thrown off.<br><br>For comparison,
 <a href="http://lib.store.yahoo.net/lib/paulgraham/hostexspam.txt"
 target="txtwin">here</a> is an example of that rare bird, a spam that
 gets through the filters.  Why?  Because by sheer chance it happens
@@ -447,8 +448,8 @@ difficult  0.071706355
 There are a couple pieces of good news here.  First, this mail
 probably wouldn't get through the filters of someone who didn't
 happen to specialize in programming languages and have a good
-friend called Morris.  For the average user, all the top five words here 
-would be neutral and would not contribute to the spam probability.<br><br>Second, I think filtering based on word pairs 
+friend called Morris.  For the average user, all the top five words here
+would be neutral and would not contribute to the spam probability.<br><br>Second, I think filtering based on word pairs
 (see below) might well
 catch this one:  "cost effective", "setup fee", "money back" -- pretty
 incriminating stuff.  And of course if they continued to spam me
@@ -461,10 +462,10 @@ continuation  0.01
 describe      0.01
 continuations 0.01
 example       0.033600237
-programming   0.05214485 
+programming   0.05214485
 i'm           0.055427782
-examples      0.07972858 
-color         0.9189189  
+examples      0.07972858
+color         0.9189189
 localhost     0.09883721
 hi            0.116539136
 california    0.84421706
@@ -490,7 +491,7 @@ a good bet.<br><br><b>Appendix: More Ideas</b><br><br>One idea that I haven't tr
 word pairs, or even triples, rather than individual words.
 This should yield a much sharper estimate of the probability.
 For example, in my current database, the word "offers"
-has a probability of .96.  If you based the probabilities  
+has a probability of .96.  If you based the probabilities
 on word pairs, you'd end up with "special offers"
 and "valuable offers" having probabilities of .99
 and, say, "approach offers" (as in "this approach offers")
@@ -501,7 +502,7 @@ gets harder to detect.
 (Curiously, a filter based on word pairs would be
 in effect a Markov-chaining text generator running
 in reverse.)<br><br>Specific spam features (e.g. not seeing the recipient's
-address in the to: field) do of course have value in 
+address in the to: field) do of course have value in
 recognizing spam.  They can be considered in this
 algorithm by treating them as virtual words.  I'll probably
 do this in future versions, at least for a handful of the
@@ -514,7 +515,7 @@ probably in future versions add a second level of testing
 designed specifically to avoid false positives.  If a
 mail triggers this second level of filters it will be accepted
 even if its spam probability is above the threshold.<br><br>I don't expect this second level of filtering to be Bayesian.
-It will inevitably 
+It will inevitably
 be not only ad hoc, but based on guesses, because the number of
 false positives will not tend to be large enough to notice patterns.
 (It is just as well, anyway, if a backup system doesn't rely on the same
@@ -527,8 +528,8 @@ cases to buy a certain stock.)   The url is in such cases
 practically enough by itself to determine whether the email
 is spam.<br><br>Domain names differ from the rest of the text in
 a (non-German) email in that they often consist of several
-words stuck together.  Though computationally expensive 
-in the general case, it might be worth trying to 
+words stuck together.  Though computationally expensive
+in the general case, it might be worth trying to
 decompose them.  If a filter has never seen the
 token "xxxporn" before it will have an individual spam
 probability of .4, whereas "xxx" and "porn" individually
@@ -555,7 +556,7 @@ well.  Bayesian filters could actually use the corpus as
 input.  But such a corpus would be useful for other kinds
 of filters too, because it could be used to test them.<br><br>Creating such a corpus poses some technical problems.  We'd
 need trust metrics to prevent malicious or incompetent
-submissions, of course.  We'd also need ways of erasing   
+submissions, of course.  We'd also need ways of erasing
 personal information (not just to-addresses and ccs, but
 also e.g. the arguments to unsubscribe urls, which often
 encode the to-address) from mails in the corpus.  If anyone
@@ -587,7 +588,7 @@ spam.<br><br>Companies sending spam often give you a way to "unsubscribe,"
 or ask you to go to their site and change your "account
 preferences" if you want to stop getting spam.  This is
 not enough to stop the mail from being spam.  Not opting out
-is not the same as opting in.  Unless the   
+is not the same as opting in.  Unless the
 recipient explicitly checked a clearly labelled box (whose
 default was no) asking to receive the email, then it is spam.<br><br>In some business relationships, you do implicitly solicit
 certain kinds of mail.   When you order online, I think you
@@ -595,14 +596,14 @@ implicitly solicit a receipt, and notification when the
 order ships.
 I don't mind when Verisign sends me mail warning that
 a domain name is about to expire (at least, if they are the
-<a href="http://siliconvalley.internet.com/news/article.php/1441651">actual 
+<a href="http://siliconvalley.internet.com/news/article.php/1441651">actual
 registrar</a> for it).  But when Verisign sends me
 email offering a FREE Guide to Building My
 E-Commerce Web Site, that's spam.<br><br>
 <b>Notes:</b><br><br>[1] The examples in this article are translated
 into Common Lisp for, believe it or not, greater accessibility.
 The application described here is one that we wrote in order to
-test a new Lisp dialect called <a href="arc.html">Arc</a> that is 
+test a new Lisp dialect called <a href="arc.html">Arc</a> that is
 not yet released.<br><br>[2] Currently the lowest rate seems to be about $200 to send a million spams.
 That's very cheap, 1/50th of a cent per spam.
 But filtering out 95%
@@ -612,31 +613,34 @@ margins big enough to absorb that.<br><br>[3] As a rule of thumb, the more quali
 name of a country, the more corrupt the rulers.  A
 country called The Socialist People's Democratic Republic
 of X is probably the last place in the world you'd want to live.<br><br>
-<b>Thanks</b> to Sarah Harlin for reading drafts of this; Daniel Giffin (who is 
+<b>Thanks</b> to Sarah Harlin for reading drafts of this; Daniel Giffin (who is
 also writing the production Arc interpreter) for several good ideas about
 filtering and for creating our mail infrastructure; Robert Morris,
-Trevor Blackwell and Erann Gat for many discussions about spam; Raph 
-Levien for advice about trust metrics;  and Chip Coldwell 
+Trevor Blackwell and Erann Gat for many discussions about spam; Raph
+Levien for advice about trust metrics;  and Chip Coldwell
 and Sam Steingold for advice about statistics.
   </div>
   <br>
-  <div float="center">
-    <a href="../faqs.html"><<u>Back</u></a>
+  <div>
+    <a href="../src/references.html"><<u>Back</u></a>
+  </div>
 </body>
-    <footer class="fixed-footer">
-        <div>
-            <ul>
-              <li>Links: </li>
-              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
-              <div class="inline-block">
-                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-            </ul>
-        </div>
-    </footer>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>

@@ -4,23 +4,26 @@
 	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
-  	<link rel="stylesheet" href="../faqs1.css">
+  	<link rel="stylesheet" href="../src/screen.css">
   	<title>FAQs</title>
 </head>
 
-	<body>
-	    <div class="custom-padding">
-    <nav>
-      <div class="logo">Logo</div>
-      <ul class="menu-area">
-        <li><a href="#">Home</a></li>
-         <li><a href="#">Biography</a></li>
-         <li><a href="#">FAQ</a></li>
-         <li><a href="#">Link</a></li>
-         <li><a href="#">Readings</a></li>
-  </ul>
-  </nav>
-  </div>
+<body>
+
+<div class="custom-padding">
+	<nav>
+		<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+		<ul class="menu-area">
+			 <li><a href="../index.html">Home</a></li>
+			 <li><a href="../src/bio.html">Biography</a></li>
+			 <li><a href="../src/faqs.html">FAQ</a></li>
+			 <li><a href="../src/quotes.html">Quotes</a></li>
+			 <li><a href="../src/articles.html">Essays</a></li>
+			 <li><a href="../src/references.html">Refferences</a></li>
+		</ul>
+	</nav>
+</div>
+<br>
 
 <div class="body_text">
 	<h1>Arc FAQs</h1><br>
@@ -29,9 +32,9 @@
 That would amount to saying that programming language design is now
 a solved problem, and that the final, perfect language has now been
 designed. It does not seem that way to me-- not by a long shot.
-The number of still open questions makes my head spin.<br><br><b>Why is it called Arc?</b><br><br>The name is a reference to <a href="progbot.html">bottom-up programming</a>.  
+The number of still open questions makes my head spin.<br><br><b>Why is it called Arc?</b><br><br>The name is a reference to <a href="progbot.html">bottom-up programming</a>.
 This means customizing the language to suit your application,
-yielding a program shaped like an arch, rather than a lintel.  
+yielding a program shaped like an arch, rather than a lintel.
 Since brevity is another aim, we lopped off the h.<br><br><b>Why did you keep car and cdr?</b><br><br>Because we couldn't think of any better alternatives.
 It would have been misleading to use first and rest or head and
 tail, because conses are fundamentally pairs; lists are one thing
@@ -39,18 +42,18 @@ you can build with them, but not the only thing.<br><br>There's no conventional 
 halves of a pair.  If you have to make up names, car and cdr
 are pretty good choices, because they're short and the same length
 and naturally composable (e.g. cadr).<br><br>
-<b>Is Arc object-oriented?</b><br><br>The phrase "object-oriented" means a lot of things.  Half 
+<b>Is Arc object-oriented?</b><br><br>The phrase "object-oriented" means a lot of things.  Half
 are obvious, and the other half are <a href="noop.html">mistakes</a>.<br><br>We believe Lisp should let you define new types that
 are treated just like the built-in types-- just as it lets you define
 new functions that are treated just like the built-in functions.
-We don't believe that every program should 
+We don't believe that every program should
 consist of defining new types.
-<!-- So far, Arc's object system is basically a cleaned-up defstruct.  That, at 
-least, is something we know we need to have.  
-We want Arc to be both simple and powerful.  Since features rarely get 
-removed from programming languages, the only way you can get a 
+<!-- So far, Arc's object system is basically a cleaned-up defstruct.  That, at
+least, is something we know we need to have.
+We want Arc to be both simple and powerful.  Since features rarely get
+removed from programming languages, the only way you can get a
 simple language is to err on the side of simplicity, and then add more as
-you need it.  
+you need it.
 We might well add multiple inheritance, for example, if it turns out to be really
 useful.
 --><br><br><b>Why not use some other delimiter than parentheses?</b><br><br>We tried various
@@ -66,7 +69,7 @@ making a language more powerful.  It is up to the
 programmer (as it always is) to avoid using the
 language in a way that confuses readers.<br><br><b>Why not build Arc on top of Java/Parrot/.NET?</b><br><br>We're trying to make something for the long
 term in Arc, something that will be useful to people in, say, 100 years.  (If that
-sounds crazy, remember that we're already up to 
+sounds crazy, remember that we're already up to
 <a href="diff.html">50</a>.)
 So (a) we're not in a hurry to save effort; when
 you're trying to make something that will last 100 years,
@@ -74,23 +77,25 @@ there is plenty of time to work on it, and (b) we don't
 want to adhere to anything that isn't timeless, lest the
 whole project curl up like a bimetallic strip.
 </div>
-<div float="center">
-<a href="../faqs.html"><<u>Back</u></a>
-</body>
-		    <footer class="fixed-footer">
-        <div>
-            <ul>
-              <li>Links: </li>
-              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
-              <div class="inline-block">
-                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-            </ul>
-        </div>
-    </footer>
+<div>
+	<a href="../src/faqs.html"><<u>Back</u></a>
+</div>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>

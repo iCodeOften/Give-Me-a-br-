@@ -4,23 +4,26 @@
 	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
-  	<link rel="stylesheet" href="../faqs1.css">
+  	<link rel="stylesheet" href="../src/screen.css">
   	<title>FAQs</title>
 </head>
 
 	<body>
-	    <div class="custom-padding">
-    <nav>
-      <div class="logo">Logo</div>
-      <ul class="menu-area">
-        <li><a href="#">Home</a></li>
-         <li><a href="#">Biography</a></li>
-         <li><a href="#">FAQ</a></li>
-         <li><a href="#">Link</a></li>
-         <li><a href="#">Readings</a></li>
-  </ul>
-  </nav>
-  </div>
+
+		<div class="custom-padding">
+			<nav>
+				<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+				<ul class="menu-area">
+					 <li><a href="../index.html">Home</a></li>
+					 <li><a href="../src/bio.html">Biography</a></li>
+					 <li><a href="../src/faqs.html">FAQ</a></li>
+					 <li><a href="../src/quotes.html">Quotes</a></li>
+					 <li><a href="../src/articles.html">Essays</a></li>
+					 <li><a href="../src/references.html">Refferences</a></li>
+				</ul>
+			</nav>
+		</div>
+	<br>
 
 <div class="body_text">
 	<h1>Plan for Spam FAQs</h1><br>
@@ -35,29 +38,29 @@ available, most of them free.
 <a href="http://www.vargonsoft.com/Outclass">Outclass</a>,
 <a href="http://www.disruptor.de">Disruptor OL</a>,
 <a href="http://spamtiger.bemat.nl">SpamTiger</a>,
-and 
+and
 <a href="http://junkchief.org">JunkChief</a>.<br><br><b>Is there anything that can protect my company's server?</b><br><br>The best commercial server-level Bayesian filter is probably
 <a href="http://www.death2spam.com">Death2Spam</a>.
 <a href="http://spamprobe.sourceforge.net/server.html">SpamProbe</a>,
 one of the best open-source Bayesian filters, can also be run
-on the server.<br><br>Most commercial server-level spam filters are still rule-based.  
+on the server.<br><br>Most commercial server-level spam filters are still rule-based.
 But there are starting to be some
 that use Bayesian filtering.  The way to find them is probably
 to search in <a href="http://www.google.com/search?q=bayesian+microsoft+exchange">Google</a>.<br><br>The question to ask the salesman is, does the filter learn to recognize
 spam based on the spam and nonspam mail we receive?  If it
 doesn't learn, it isn't Bayesian.<br><br><b>Does Arc/Lisp have some advantage for writing this kind of software?</b><br><br>Lisp's symbol type is useful in manipulating databases of words,
-because it lets you test for equality by just comparing pointers.  
-(If you find yourself using checksums to identify words, it's symbols 
+because it lets you test for equality by just comparing pointers.
+(If you find yourself using checksums to identify words, it's symbols
 you mean to be using.)  Prolog, Erlang, and Ruby also support symbols.
 So does Python, to a degree, though I don't think it has any syntax for them yet.<br><br>More generally, Lisp was designed for rapid
 prototyping, and this application involved a lot of that.  I probably
-spent 95% of the development time typing expressions into the 
+spent 95% of the development time typing expressions into the
 toplevel, trying variously tweaked algorithms on individual emails.<br><br><b>Do you mind if I write filters based on this algorithm?</b><br><br>Of course not.  I don't claim to have invented anything new here.  Bayesian
 text classification is an old and established field.  If there is anything new
-in this article (at least, it was news to me) it is that such a simple 
+in this article (at least, it was news to me) it is that such a simple
 variant of it is so effective at filtering spam.<br><br>So by all means go write spam filters.  It is a very rewarding hack.  If
 you end up creating something other people can use, let me know and
-I'll make a link to it.<br><br><b>I don't know Lisp; can you explain the algorithm to me?</b><br><br>It's expressed in math notation in <a href="hackpaint.html">Hackers 
+I'll make a link to it.<br><br><b>I don't know Lisp; can you explain the algorithm to me?</b><br><br>It's expressed in math notation in <a href="hackpaint.html">Hackers
 & Painters</a>.<br><br><b>Could you use Bayesian filtering to make Web content filters?</b><br><br>I've never tried it, but yes, I think it would work well.<br><br><b>Will this algorithm filter out 99.5% of my spam with no false positives?</b><br><br>It does filter out 99.5% of <i>my</i> spam. I got similar results for the one
 other spam collection I've tested it on so far.  (I couldn't measure false
 positives, because I only had the spams.)<br><br>I do worry a bit that my email might just be especially easy to filter.
@@ -68,7 +71,7 @@ to programming that make it easy to distinguish from spam (though not
 satellite dishes).<br><br>So if you do try implementing this filter for yourself, I'd appreciate it if you
 could let me know how well it works for you.  My gut feel is that it will work
 pretty effectively for almost everyone, but it would be reassuring to hear
-numbers.<br><br><b>Could spammers fool Bayesian filters by filling their spams with random words?</b><br><br>They would have to get rid of the bad words as well as adding neutral ones.  
+numbers.<br><br><b>Could spammers fool Bayesian filters by filling their spams with random words?</b><br><br>They would have to get rid of the bad words as well as adding neutral ones.
 Only the most interesting fifteen words contribute to the probability,
 and neutral words like "onion", no matter how many there are of them,
 can't compete with the incriminating "viagra" for statistical significance.<br><br>To outweigh incriminating words, the spammers would need to dilute
@@ -76,13 +79,13 @@ their emails with especially innocent words, i.e. those that are not merely
 neutral but occur disproportionately often in the user's legitimate email.
 But these words (e.g. the nicknames of one's friends, terms one uses
 in one's work) are different for each recipient, and the spammers have
-no way of figuring out what they are.<br><br><b>Once this software was available, couldn't spammers just tune their spams 
+no way of figuring out what they are.<br><br><b>Once this software was available, couldn't spammers just tune their spams
 to get through it?</b><br><br>They couldn't necessarily tune their
 emails and still say what they wanted to say.  If they wanted to send you to a url that
 is known to the filters, for example, they would find it hard to
 tune their way around that.<br><br>Second, tune using what?  Each user's filters will be different, and the innocent
-words will vary especially.  At most, spammers will be able to dilute 
-their mails with merely neutral words, and those will not tend to be much use 
+words will vary especially.  At most, spammers will be able to dilute
+their mails with merely neutral words, and those will not tend to be much use
 because they won't be among the fifteen most interesting.<br><br>If the spammers did try to get most of the incriminating words
 out of their messages, they
 would all have to use <i>different</i> euphemisms, because if they
@@ -103,7 +106,7 @@ level of scanning tokens, not even considering them
 as separators.<br><br>Spammers sometimes use randomly generated tags to break
 up tokens, since html rendering software will usually ignore
 meaningless tags. I do allow these to separate tokens, and it
-works fine.  Broken bits of words simply get high spam probabilities.<br><br><b>Would this article itself be filtered out by your filters?</b><br><br>No. Someone sent it to me as a test, and it wasn't.  
+works fine.  Broken bits of words simply get high spam probabilities.<br><br><b>Would this article itself be filtered out by your filters?</b><br><br>No. Someone sent it to me as a test, and it wasn't.
  Although the article contains a lot of
 spam words, it also contains a lot of even more provably innocent
 words (like "spammers" ironically, which occurs in a lot of my
@@ -114,11 +117,11 @@ ended up with the minimum possible probability.<br><br>That makes sense, because
 to resemble the content of their own email than it would a spam, even
 if the article happens to be about spam.<br><br><b>How well can your software filter out mail that's about spam?</b><br><br>This is a problem for anyone who works on spam filtering.  In the extreme
 case, if someone you've never heard from merely forwards you a spam
-with no additional comment, it's going to be hard to filter out.  There it will 
+with no additional comment, it's going to be hard to filter out.  There it will
 all come down to the headers.<br><br>But after all, if someone could forward you spam with
 impunity, then spammers could forward you spam too.  So for
 these situations we may have to have a special password
-that people could include in mail to get it by the filters, and 
+that people could include in mail to get it by the filters, and
 also (I have one already) a special trash folder for metaspam
 so that it doesn't contribute to the probabilities.<br><br>If there is a good side to this, it's that if we can create filters that work
 acceptably well for us, they'll work even better for everyone else.<br><br><b>Will this software filter out good automated email
@@ -126,32 +129,32 @@ like order receipts and newsgroup faqs?</b><br><br>Mostly not.  That kind of mai
 the text usually has a very different character from spam.<br><br>The only automated responses that tend to get filtered out are the
 ones that contain a lot of additional advertising.  In effect, these
 emails consist of an automated response with a spam appended to the
-end, so it is not surprising filters catch them.<br><br><b>Will the kind of people who would respond to a spam use filters?</b><br><br>I think so.  I'm guessing here, but I suspect that people 
+end, so it is not surprising filters catch them.<br><br><b>Will the kind of people who would respond to a spam use filters?</b><br><br>I think so.  I'm guessing here, but I suspect that people
 <a href="wfks.html">stupid enough</a>
 to respond to a spam will often get email through one of the free services
-like Yahoo Mail or Hotmail, or through big ISPs like AOL or Earthlink.  
+like Yahoo Mail or Hotmail, or through big ISPs like AOL or Earthlink.
 Once word spreads that it is possible to
-filter out most spam, they'll be forced to offer effective filters.<br><br><b>If filters catch most spam, won't spammers just send more to compensate?</b><br><br>Spammers already operate at capacity.<br><br><!-- <b>Have you tried collecting spam with decoy addresses?</b><br><br>Yes, it's a common technique; such addresses are called honeypots.<br><br>Unfortunately, new addresses are not nearly as rich a source of spam as 
+filter out most spam, they'll be forced to offer effective filters.<br><br><b>If filters catch most spam, won't spammers just send more to compensate?</b><br><br>Spammers already operate at capacity.<br><br><!-- <b>Have you tried collecting spam with decoy addresses?</b><br><br>Yes, it's a common technique; such addresses are called honeypots.<br><br>Unfortunately, new addresses are not nearly as rich a source of spam as
 addresses that people have had for ten years, and used
-to register domain names, post to newsgroups, etc.  
+to register domain names, post to newsgroups, etc.
 Ask any old-time sysadmin.  I've heard of some of these guys getting hundreds
 of spams a day.
 -->
 <b>How do you feel about blacklists?</b><br><br>As ISPs use them now, they're equivalent to <a href="falsepositives.html">very bad filters</a>.
-But the information they supply could be incorporated into Bayesian filtering.<br><br><b>Doesn't Bayes' Rule assume the predictors are independent?</b><br><br>Yes, strictly speaking it is only valid assuming the probabilitiy of e.g. 
-"sex" occurring in an email is unrelated to the probability of "sexy" 
+But the information they supply could be incorporated into Bayesian filtering.<br><br><b>Doesn't Bayes' Rule assume the predictors are independent?</b><br><br>Yes, strictly speaking it is only valid assuming the probabilitiy of e.g.
+"sex" occurring in an email is unrelated to the probability of "sexy"
 occurring in it.  Obviously that is not the case.<br><br>On the other hand, there is a long tradition of violating
 this requirement.  When you do that it's called a "naive Bayesian" algorithm
 and in practice it works pretty well, just as in practice (if you stay away
 from the edges of precision) it works pretty well to treat floating point
 numbers as if they were reals.<br><br><b>Does this algorithm take into account the prior probability of a mail being a spam?</b><br><br>No. It assumes it's equally likely for a mail to be a spam or not.  So accuracy
-could be slightly improved by taking into account the actual proportion of spam 
+could be slightly improved by taking into account the actual proportion of spam
 received by each user.  You would have to do this by hour though, because
 the proportion varies so much depending on the time of the day that the
 overall prior probability is useless as a predictor.<br><br><b>Why do you consider 15 words?  What's special about 15?</b><br><br>Actually, in the latest version of the filter I use 20, because
-marking tokens by <a href="bbf.html">context</a> means the 
-software now sees more distinct 
-tokens per mail.<br><br>Nearly all spams tend to have that many fairly incriminating words 
+marking tokens by <a href="bbf.html">context</a> means the
+software now sees more distinct
+tokens per mail.<br><br>Nearly all spams tend to have that many fairly incriminating words
 in them.  If you
 look at more than that, you'll start to include neutral words,
 which are noise at best.  But you want to look at as many words as you can,
@@ -159,23 +162,26 @@ because legitimate emails may well contain two or three words with high
 spam probabilities-- if you used only the top 5 words, for example,
 you'd start to get false positives.<br><br><b>Will this work for languages other than English?</b><br><br>As long as they use whitespace to separate tokens, it should.
 </div>
-<div float="center">
-<a href="../faqs.html"><<u>Back</u></a>
+<div>
+	<a href="../src/faqs.html"><<u>Back</u></a>
+</div>
 </body>
-	    <footer class="fixed-footer">
-        <div>
-            <ul>
-              <li>Links: </li>
-              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
-              <div class="inline-block">
-                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-            </ul>
-        </div>
-    </footer>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>

@@ -6,11 +6,13 @@
   box-sizing: border-box;
 }
 body{
-  background-image: url(/code-wallpaper-16.jpg);
+  background-image: url(../images/code-wallpaper-16.jpg);
   -webkit-background-size: cover;
   background-size:cover;
   background-position: center;
   height: 100vh;
+  text-align: center;
+  color: white;
 }
 .menu-area li a{
   text-decoration: none;
@@ -19,7 +21,7 @@ body{
   text-transform: uppercase;
   display: block;
   padding: 0 25px;
-  font-size: 14px
+  font-size: 14px;
   line-height: 30px;
   position: relative;
   z-index: 1;

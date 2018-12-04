@@ -4,24 +4,25 @@
 	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
-  	<link rel="stylesheet" href="../faqs1.css">
+  	<link rel="stylesheet" href="../src/screen.css">
   	<title>FAQs</title>
 </head>
 
 	<body>
-	    <div class="custom-padding">
-    <nav>
-      <div class="logo">Logo</div>
-      <ul class="menu-area">
-        <li><a href="#">Home</a></li>
-         <li><a href="#">Biography</a></li>
-         <li><a href="#">FAQ</a></li>
-         <li><a href="#">Link</a></li>
-         <li><a href="#">Readings</a></li>
-  </ul>
-  </nav>
-  </div>
-
+		<div class="custom-padding">
+			<nav>
+				<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+				<ul class="menu-area">
+					 <li><a href="../index.html">Home</a></li>
+					 <li><a href="../src/bio.html">Biography</a></li>
+					 <li><a href="../src/faqs.html">FAQ</a></li>
+					 <li><a href="../src/quotes.html">Quotes</a></li>
+					 <li><a href="../src/articles.html">Essays</a></li>
+					 <li><a href="../src/references.html">Refferences</a></li>
+				</ul>
+			</nav>
+		</div>
+	<br>
 <div class="body_text">
 	<h1>Viaweb FAQs</h1><br>
 	<b>How did the editor handle client sessions?</b><br><br>There was one Lisp process for each user.  When someone logged
@@ -33,8 +34,8 @@ respond to an HTTP request.  All we had to do was evaluate
 a closure stored in memory.<br><br><b>What did you use for an HTTP server?</b><br><br>At first the editor had its own HTTP server, written in Common Lisp
 by Robert Morris.  Later we switched to a version of
 Apache that he hacked to talk to Lisp.<br><br><b>What Lisp did you use?</b><br><br><a href="http://clisp.sourceforge.net/">Clisp</a>.<br><br><b>Did you use real continuations to save state?</b><br><br>No, we used macros to fake them in Common Lisp, as described in
-<a href="onlisp.html">On Lisp</a>.<br><br><b>What database did you use?</b><br><br>We didn't use one.  We just stored everything in files.  
-The Unix file system is pretty good at not losing your data, 
+<a href="onlisp.html">On Lisp</a>.<br><br><b>What database did you use?</b><br><br>We didn't use one.  We just stored everything in files.
+The Unix file system is pretty good at not losing your data,
 especially if you put the files on a Netapp.<br><br>It is a common mistake to think of Web-based apps as interfaces to databases.
 Desktop apps aren't just interfaces to databases; why should Web-based apps
 be any different?  The hard part is not where you store the data, but
@@ -51,7 +52,7 @@ and is now a professor at MIT?</b><br><br>Yes.<br><br><b>Where did you get ventu
 business as "angels."  Our investors were pretty serious,
 almost VCs, but they weren't actually brand-name VC firms.<br><br>We did Viaweb very cheaply.  We spent a total of about $2 million.
 We were just about breaking even when we got bought, so we
-would not have spent too much more.<br><br><b>How was "Viaweb" pronounced?</b><br><br>The official policy was that you could say either vee-a-web or 
+would not have spent too much more.<br><br><b>How was "Viaweb" pronounced?</b><br><br>The official policy was that you could say either vee-a-web or
 vie-a-web.  We all used the former, but everyone else, including
 the people at Yahoo, seemed to prefer the latter.<br><br><b>What would you do differently?</b><br><br>Technically, not much.  I think the main thing we should have done
 that we didn't was start some kind of online store ourselves.  We
@@ -59,23 +60,26 @@ used the editor to make our own site, so we were pretty motivated
 to make it good.  But we could only understand the e-commerce
 part of the software second-hand.
 </div>
-<div float="center">
-<a href="../faqs.html"><<u>Back</u></a>
+<div>
+	<a href="../src/faqs.html"><<u>Back</u></a>
+</div>
 </body>
-    <footer class="fixed-footer">
-        <div>
-            <ul>
-              <li>Links: </li>
-              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
-              <div class="inline-block">
-                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-            </ul>
-        </div>
-    </footer>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>

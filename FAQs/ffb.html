@@ -4,23 +4,26 @@
 	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
-  	<link rel="stylesheet" href="../faqs1.css">
+  	<link rel="stylesheet" href="../src/screen.css">
   	<title>FAQs</title>
 </head>
 
-	<body>
-	    <div class="custom-padding">
-    <nav>
-      <div class="logo">Logo</div>
-      <ul class="menu-area">
-        <li><a href="#">Home</a></li>
-         <li><a href="#">Biography</a></li>
-         <li><a href="#">FAQ</a></li>
-         <li><a href="#">Link</a></li>
-         <li><a href="#">Readings</a></li>
-  </ul>
-  </nav>
-  </div>
+<body>
+
+<div class="custom-padding">
+	<nav>
+		<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+		<ul class="menu-area">
+			 <li><a href="../index.html">Home</a></li>
+			 <li><a href="../src/bio.html">Biography</a></li>
+			 <li><a href="../src/faqs.html">FAQ</a></li>
+			 <li><a href="../src/quotes.html">Quotes</a></li>
+			 <li><a href="../src/articles.html">Essays</a></li>
+			 <li><a href="../src/references.html">Refferences</a></li>
+		</ul>
+	</nav>
+</div>
+<br>
 
 <div class="body_text">
 	<h1>FFB FAQs</h1><br>
@@ -36,10 +39,10 @@ be mistaken.  Let's <i>figure out</i> if it will work or not.
 -->
 <b>Could spammers make servers fast
 enough to handle the flood of http requests?</b><br><br>The hardcore spammers probably could.  But not sites like
-<a href="http://americansingles.com">AmericanSingles.Com</a>.<br><br><b>What kind of bandwidth costs could FFBs generate?</b><br><br>If there were 100,000 FFBs, a spammer's site had a total of 
+<a href="http://americansingles.com">AmericanSingles.Com</a>.<br><br><b>What kind of bandwidth costs could FFBs generate?</b><br><br>If there were 100,000 FFBs, a spammer's site had a total of
 100k of stuff in it, and each FFB crawled the site 10x per
 spam, this would generate 100 GB of transfer.  At current
-<a href="http://ekrayweb.com/bulletproofhostinghostingplans.htm">rates</a> 
+<a href="http://ekrayweb.com/bulletproofhostinghostingplans.htm">rates</a>
 for spam hosting that would cost the spammer
 about $1000-4000 per spam.<br><br>Introductory spam hosting plans have transfer limits
 well under 100 GB/month, so FFBs would shut down such sites
@@ -49,19 +52,19 @@ Anything that followed such a link must be a crawler and could
 safely be ignored.  But the easiest way to protect against
 FFBs would be to include working unsubscribe links.  This would
 be particularly necessary for small fry just getting started and
-"legitimate" sites that hire 
-spammers to generate traffic.  
-These would not have the infrastructure or expertise to protect 
+"legitimate" sites that hire
+spammers to generate traffic.
+These would not have the infrastructure or expertise to protect
 against FFBs.<br><br><b>Wouldn't retrieving web beacons show your address was live?</b><br><br>Yes, so that might bring more spam.  But it would also make
 web beacons stop working as an index of open rates.  And
 you'd be clicking on unsubscribe links as well, which FFBs
 would make more popular.<br><br><b>Wouldn't this encourage people to send spams promoting sites
 that pay for clickthroughs?</b><br><br>If there are still sites that pay for
-clickthroughs, they must already 
-have some way to protect themselves against people who 
+clickthroughs, they must already
+have some way to protect themselves against people who
 generate traffic by spamming.  So there would be no money in it.<br><br><b>This is a bad idea because it just uses up more bandwidth.</b><br><br>That's like arguing that we shouldn't have police, because
 in addition to all the losses caused by crime, we have
-people taken away from productive work to chase criminals.   
+people taken away from productive work to chase criminals.
 If FFBs make working unsubscribe links universal,
 the result is net less use of bandwidth.<br><br>I'm not proposing that FFBs should
 be used by people on dialup lines, just by users who have
@@ -92,33 +95,33 @@ Sites would have to be inspected by humans
 to protect innocent sites from being blacklisted.<br><br>If FFBs become a threat to
 them, spammers will try to give them a bad name by causing
 them to attack innocent victims.
-So blacklists should include ip addresses as well as domain names.  
+So blacklists should include ip addresses as well as domain names.
 Otherwise a spammer could
 switch the DNS record of a blacklisted site to point to
-an innocent victim.<br><br>Anyone running a blacklist should assume, by default, that   
+an innocent victim.<br><br>Anyone running a blacklist should assume, by default, that
 any url mentioned in a spam is the victim of a
-<a href="http://www.everything2.com/index.pl?node=Joe%20Job">Joe job</a>, 
-and only blacklist sites when, after inspection,  
+<a href="http://www.everything2.com/index.pl?node=Joe%20Job">Joe job</a>,
+and only blacklist sites when, after inspection,
 this is clearly not the case.<br><br><b>Aren't blacklists prone to abuse?</b><br><br>Yes.  To be honest, this is the weak link in this plan.
-A widely used FFB blacklist run by nuts like MAPS could 
+A widely used FFB blacklist run by nuts like MAPS could
 do a lot of damage.  And all blacklists seem to become
 <a href="spamhausblacklist.html">corrupt</a> eventually.<br><br>FFB blacklists are less dangerous
 than mail server blacklists, because being on the blacklist
 alone is not enough to cause a site trouble.  You only get
 crawled when you're already on the blacklist, and a new
-spam arrives with your url in it.  On 
+spam arrives with your url in it.  On
 the other hand, FFBs are going to be run by individual users,
-who will not be as discerning about the blacklists they 
+who will not be as discerning about the blacklists they
 subscribe to as ISPs are.<br><br><!-- Perhaps problems with blacklists could be solved
 with new technology: for example, a voting mechanism like
-Slashdot's that gave zealots lower "karma" for voting to 
+Slashdot's that gave zealots lower "karma" for voting to
 blacklist a site other voters decided was innocent.
 -->
 <b>Couldn't spammers just sue or DoS the blacklist?</b><br><br>To protect against DoS attacks, the blacklist might have to
 be distributed through a p2p network.<br><br>I don't think lawsuits would be much of a threat, though.
 A blacklist of spamvertised sites could legitimately claim
-that it wasn't intended specifically for use by FFBs.  
-There's a genuine need for such blacklists to aid in spam 
+that it wasn't intended specifically for use by FFBs.
+There's a genuine need for such blacklists to aid in spam
 filtering.  To evade filters, spammers now change their
 domain names regularly.  When a filter sees a domain name
 for the first time, it would be very helpful if there
@@ -132,38 +135,41 @@ drive a lot of them out of business.  Writing viruses
 seems to be taken more seriously by the criminal justice
 system than forging headers.  I think many current spammers
 wouldn't take the risk.<br><br><b>What about spammers breaking into people's web servers and
-using them to redirect?</b><br><br>This wouldn't help them.  FFBs would still 
+using them to redirect?</b><br><br>This wouldn't help them.  FFBs would still
 interfere with the spammers' "customers".<br><br><b>What about spammers using redirects off sites like Geocities?</b><br><br>Such spams are rare, probably because Geocities
 has figured out how to prevent spammers from using them for
 this purpose.  Hosting services that hadn't figured
-this out would soon learn.<br><br><b>Why have email as part of the system?  Why not just have 
+this out would soon learn.<br><br><b>Why have email as part of the system?  Why not just have
 a blacklist of spam sites and encourage people to beat on them?</b><br><br>Several people have written suggesting a "DDoS@Home" project
 of this type.  (Two correspondents who shall remain nameless
 simultaneously invented this
 catchy name.)  But I think mail should remain in the system for
 two reasons: (a) it tells you which sites to pound, and when,
 and (b) if you included it as part of a filter, you could
-get more users.<br><br>On the other hand, if some group managed to launch a DDoS@Home 
+get more users.<br><br>On the other hand, if some group managed to launch a DDoS@Home
 project aimed at spammers, that would be enormously amusing.
 I'd sign up for it.
 </div>
-<div float="center">
-<a href="../faqs.html"><<u>Back</u></a>
+<div>
+	<a href="../src/faqs.html"><<u>Back</u></a>
+</div>
 </body>
-	    <footer class="fixed-footer">
-        <div>
-            <ul>
-              <li>Links: </li>
-              <li class="right"><a href = "mailto: paulgram@edu.edu"><i>Paulgraham@edu.edu</i></li>
-              <div class="inline-block">
-                <li> <a href="https://www.ycombinator.com/"> <img src="Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://twitter.com/paulg"> <img src="twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-              <div class="inline-block">
-                <li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
-              </div>
-            </ul>
-        </div>
-    </footer>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>
