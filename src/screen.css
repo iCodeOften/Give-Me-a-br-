@@ -49,7 +49,7 @@ html{
   display: inline-block;
 }
 .custom-padding{
-  padding-top: 20px;
+  padding-top: 0;
 }
 nav{
   position: relative;
@@ -59,7 +59,7 @@ nav{
   z-index: 1;
   background: #333;
   margin: 0 auto;
-  width: calc(100% - 60px) ;
+  width: 100% ;
 }
 
 .logo{
@@ -126,7 +126,7 @@ nav:after{
   color: white;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -145,7 +145,7 @@ nav:after{
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 800px;
+  min-height: 100%;
 }
 .parallax-2{
   /*image*/
