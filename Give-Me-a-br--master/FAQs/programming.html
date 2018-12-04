@@ -1,0 +1,145 @@
+<DOCTYPE html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, fit-to-shrink=no">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:700i" rel="stylesheet">
+  	<link rel="stylesheet" href="../src/screen.css">
+  	<title>FAQs</title>
+</head>
+
+	<body>
+
+		<div class="custom-padding">
+			<nav>
+				<div class="logo"><img src="../images/logo.png" width ="50px"></div>
+				<ul class="menu-area">
+					 <li><a href="../index.html">Home</a></li>
+					 <li><a href="../src/bio.html">Biography</a></li>
+					 <li><a href="../src/faqs.html">FAQ</a></li>
+					 <li><a href="../src/quotes.html">Quotes</a></li>
+					 <li><a href="../src/articles.html">Essays</a></li>
+					 <li><a href="../src/references.html">Refferences</a></li>
+				</ul>
+			</nav>
+		</div>
+	<br>
+
+<div class="body_text">
+	<h1>Programmning FAQs</h1><br>
+	<b>What editor do you use?</b><br><br>vi.<br><br><b>How can I learn to program?</b><br><br>Find a friend who knows how to program. Get them to set you up with a system
+where you can edit and run programs.  Use whatever language they suggest
+for a beginner (probably it will be Python or Ruby).   Then get the
+O'Reilly book and start working through it.<br><br>As you learn the mechanics of writing and running
+a program, start thinking about specific
+programs you want to write.  That will motivate you to learn
+more.<br><br>Don't start with a problem that's too big.
+A good way
+to begin is to take an existing program and
+modify it to do something new.<br><br>Initially your programs will be
+ugly, but don't worry about that.
+Everyone's are. Just keep going, and they'll get
+better.<br><br>As you learn, you'll find it
+useful to look at programs other people have written.
+But you'll learn more from this once you've tried
+programming yourself.<br><br>Finally, find friends who like to write programs.
+They can answer your technical questions; you'll
+get new ideas from talking to them; and they'll be
+the audience for your first efforts.
+<!-- The way to learn how to program is to write programs.
+That's how everyone does it.  So the first step is to
+think of a program<br><br>The hardest part is often to get the initial setup:
+a system where you can edit and run programs.
+Either get a friend to set this up for you,
+or use <a href="http://appjet.com/learn-to-program/lessons/intro">AppJet</a>.<br><br>Once you can edit and run programs, you can gradually
+get more ambitious.  --><br><br><b>Why do you advise plunging right into a programming project
+instead of carefully planning it first?</b><br><br>If you're trying to solve a simple, predefined problem
+like doing a depth-first search, thinking everything
+out beforehand doesn't hurt.  But few real problems
+are like that.  In real-world
+applications, you don't usually know at first precisely what
+problem you're trying to solve.  So if you spend a lot
+of time planning in advance, what you'll end up with
+is a minutely detailed plan for solving the wrong
+problem.<br><br>With complex, ill-defined problems, you're
+better off writing a prototype as fast as you can,
+seeing what turns out to be wrong with it, and then
+changing your definition of the problem accordingly.<br><br>Often the reason programmers are pushed into planning
+is not that the problem requires it, but that project
+managers require it.  Maybe programmers
+should give managers an explicit choice: do you want
+me to solve the problem in the way that will make you
+feel good, or the way that will yield the best solution?<br><br><b>Why do you keep going on about Lisp?</b><br><br>There are a number of topics I go on about: that small companies
+do things better than big ones; that cubicles suck; that you
+have to understand design to be a good hacker; that
+planning is overrated.  Those don't seem so conspicuous,
+because many readers either have no prior opinion,
+or already agree.<br><br>It doesn't cost
+anything to realize that cubicles suck.  Few people have a
+vested interest in one style of office over another.  But
+everyone has a vested interest in the languages they already
+know, because (a) it is a lot of work to learn a new language,
+and (b) programming languages dictate how you think about programs,
+so it is hard even to conceive of a language more powerful than
+whatever you're used to.<br><br><!--To anyone who knows Lisp, the things I say about it probably
+seem as uncontroversial as dissing cubicles.
+-->
+Dissing someone else's language is considered rude, I know.
+But rude is not the same as false.  And any language designer
+<i>has</i> to face awkward questions like which languages are
+better, and why, just as proctologists have to do things that
+would be considered extremely rude if ordinary people did them.<br><br><!--If you don't believe me, let's switch over to Guy Steele,
+co-author of the Java spec:
+<blockquote>
+We were not out to win over the Lisp programmers; we were after the C++ programmers. We managed to drag a lot of them about halfway to Lisp.
+</blockquote>
+Now, oddly enough, this is very much how I have
+<a href="rootsoflisp.html">described<a> languages
+of this type:
+<blockquote>
+A popular recipe for new programming languages in the past 20
+years has been to take the C model of computing and add to it,
+piecemeal, parts taken from the Lisp model, like runtime typing
+and garbage collection.
+</blockquote>
+If it is merely some weird bias of mine to think that other
+languages approach Lisp asymptotically, it is encouraging to
+find that the designers of the other languages, if not their
+users, share this bias. -->
+<b>Isn't
+object-oriented programming naturally suited to some problems?</b><br><br>Yes and no.  A lot of what seem to be OO problems turn out not to
+be if you have random access to the concepts that together comprise
+object-orientedness.<br><br>If I were writing a CAD program or a simulation, for example,
+I'd probably use OO abstractions (though I'd probably end up
+creating my own OO model with macros instead of using whatever
+came with the language).<br><br>But if I were trying to solve the problem one reader sent to me
+as a canonical example of an OO problem, I wouldn't.
+<blockquote>
+Suppose you have n serial ports, each of which may speak one of k
+protocols, and this must be configurable at run-time.
+</blockquote>
+I'd just use an n-by-k array of closures to represent this.
+</div>
+<div>
+	<a href="../src/faqs.html"><<u>Back</u></a>
+</div>
+</body>
+<footer class="fixed-footer">
+		<div>
+				<ul>
+					<div class="inline-block">
+						<li> <a href="https://www.ycombinator.com/"> <img src="../images/Y.png" alt = "icon_1" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://twitter.com/paulg"> <img src="../images/twitter.png" alt = "icon_2" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="https://www.amazon.com/gp/product/0596006624"> <img src="../images/H&P.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+					<div class="inline-block">
+						<li> <a href="mailto: paulgram@edu.edu"> <img src="../images/mail.png" alt = "icon_3" style= "height: 40px; width: 40px; border: 0px; padding: 2px"> </a></li>
+					</div>
+				</ul>
+		</div>
+</footer>
+</html>
